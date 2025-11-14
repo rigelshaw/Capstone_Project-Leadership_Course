@@ -26,5 +26,4 @@
 4. **Thumbnails**: Press 'T' or click thumbnails button
 
 ## 📸 Screenshots
-[Add some screenshots of different slides]# Capstone_Project-Leadership_Course
 It's the capstone project of a leadership course i took to enhance my skills.
