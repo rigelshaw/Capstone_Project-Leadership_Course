@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>AMUL Data Snapshot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <style>
+    .data-card {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+    .data-card:hover {
+      transform: translateY(-5px);
+      background: rgba(212, 175, 55, 0.15);
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #d4af37, #f4e4bc, #d4af37);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;background:#3d2914;">
+  <div class="relative w-[1280px] h-[720px] overflow-hidden">
+    
+    <!-- Background Video -->
+    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover opacity-20">
+      <source src="https://media.istockphoto.com/id/977589756/video/white-porcelain-cup-on-a-saucer-on-a-wooden-table-with-a-hot-drink-slow-motion.mp4?s=mp4-640x640-is&k=20&c=Y1Cut52CmNOaoWi3vH8KEURHeyLu6pgczUMLxyXFN5c=" type="video/mp4">
+    </video>
+    
+    <!-- Background Overlays -->
+    <div class="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/60"></div>
+    <div class="absolute inset-0 bg-radial-gradient(ellipse at center,transparent 10%,rgba(61,41,20,0.95) 100%)"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10 w-full h-full p-8 flex flex-col">
+      <!-- Header -->
+      <div class="text-center mb-8">
+        <h1 class="text-5xl font-bold mb-2 gold-gradient" style="font-family:'Playfair Display',serif;">
+          Data Snapshot
+        </h1>
+        <div class="w-24 h-1 mx-auto mb-2 bg-gradient-to-r from-transparent via-yellow-600 to-transparent"></div>
+        <p class="text-lg text-amber-100 opacity-90" style="font-family:'Crimson Text',serif;">
+          Numbers that define India's dairy revolution
+        </p>
+      </div>
+
+      <!-- Main Data Grid - 2x3 Layout -->
+      <div class="flex-1 grid grid-cols-3 grid-rows-2 gap-4">
+        <!-- Row 1 -->
+        <div class="data-card p-4 flex flex-col items-center justify-center text-center">
+          <div class="text-4xl font-bold mb-2 gold-gradient" style="font-family:'Playfair Display',serif;">3.6M</div>
+          <div class="text-lg text-amber-200 font-semibold mb-1" style="font-family:'Playfair Display',serif;">Farmers</div>
+          <p class="text-amber-100 text-sm" style="font-family:'Crimson Text',serif;">Empowering rural India</p>
+        </div>
+
+        <div class="data-card p-4 flex flex-col items-center justify-center text-center">
+          <div class="text-4xl font-bold mb-2 gold-gradient" style="font-family:'Playfair Display',serif;">80+</div>
+          <div class="text-lg text-amber-200 font-semibold mb-1" style="font-family:'Playfair Display',serif;">Products</div>
+          <p class="text-amber-100 text-sm" style="font-family:'Crimson Text',serif;">Diverse dairy portfolio</p>
+        </div>
+
+        <div class="data-card p-4 flex flex-col items-center justify-center text-center">
+          <div class="text-4xl font-bold mb-2 gold-gradient" style="font-family:'Playfair Display',serif;">200M</div>
+          <div class="text-lg text-amber-200 font-semibold mb-1" style="font-family:'Playfair Display',serif;">Daily Consumers</div>
+          <p class="text-amber-100 text-sm" style="font-family:'Crimson Text',serif;">Serving the nation</p>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="data-card p-4 flex flex-col items-center justify-center text-center">
+          <div class="text-3xl font-bold mb-2 gold-gradient" style="font-family:'Playfair Display',serif;">₹52K+ Cr</div>
+          <div class="text-lg text-amber-200 font-semibold mb-1" style="font-family:'Playfair Display',serif;">Turnover</div>
+          <p class="text-amber-100 text-sm" style="font-family:'Crimson Text',serif;">Annual revenue</p>
+        </div>
+
+        <div class="data-card p-4 flex flex-col items-center justify-center text-center">
+          <div class="text-3xl font-bold mb-2 gold-gradient" style="font-family:'Playfair Display',serif;">18.6K</div>
+          <div class="text-lg text-amber-200 font-semibold mb-1" style="font-family:'Playfair Display',serif;">Village Societies</div>
+          <p class="text-amber-100 text-sm" style="font-family:'Crimson Text',serif;">Grassroots network</p>
+        </div>
+
+        <div class="data-card p-4 flex flex-col items-center justify-center text-center">
+          <div class="text-4xl font-bold mb-2 gold-gradient" style="font-family:'Playfair Display',serif;">#1</div>
+          <div class="text-lg text-amber-200 font-semibold mb-1" style="font-family:'Playfair Display',serif;">Most Trusted</div>
+          <p class="text-amber-100 text-sm" style="font-family:'Crimson Text',serif;">India's dairy leader</p>
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="mt-4 space-y-3">
+        <!-- Quote -->
+        <div class="text-center">
+          <div class="inline-block px-6 py-3 rounded-full data-card">
+            <p class="text-amber-200 italic text-sm" style="font-family:'Crimson Text',serif;">
+              "From 1946 to today - A legacy built on trust & numbers"
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="text-center">
+          <div class="inline-flex items-center space-x-4 px-4 py-2 rounded-full data-card">
+            <div class="flex items-center space-x-1">
+              <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+              <span class="text-amber-200 text-xs" style="font-family:'Crimson Text',serif;">Est. 1946</span>
+            </div>
+            <div class="text-amber-100 text-xs">•</div>
+            <div class="flex items-center space-x-1">
+              <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+              <span class="text-amber-200 text-xs" style="font-family:'Crimson Text',serif;">77+ Years</span>
+            </div>
+            <div class="text-amber-100 text-xs">•</div>
+            <div class="flex items-center space-x-1">
+              <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+              <span class="text-amber-200 text-xs" style="font-family:'Crimson Text',serif;">India's Pride</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    gsap.registerPlugin(SplitText);
+    
+    // Background video animation
+    const video = document.querySelector('video');
+    gsap.fromTo(video, {
+      opacity: 0,
+      scale: 1.1
+    }, {
+      opacity: 0.2,
+      scale: 1,
+      duration: 2,
+      ease: "power3.out"
+    });
+
+    // Title animation
+    const title = document.querySelector('h1');
+    const titleSplit = SplitText.create(title, {
+      type: "chars"
+    });
+    
+    gsap.fromTo(titleSplit.chars, {
+      opacity: 0,
+      yPercent: 50,
+      rotation: 10
+    }, {
+      opacity: 1,
+      yPercent: 0,
+      rotation: 0,
+      duration: 0.8,
+      stagger: 0.02,
+      delay: 0.5,
+      ease: "back.out(1.7)",
+      onComplete: () => titleSplit.revert()
+    });
+
+    // Data cards animation - Row 1
+    const row1Cards = document.querySelectorAll('.grid > div:nth-child(-n+3)');
+    gsap.fromTo(row1Cards, {
+      opacity: 0,
+      y: 30,
+      scale: 0.8
+    }, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.6,
+      stagger: 0.1,
+      delay: 1.2,
+      ease: "back.out(1.7)"
+    });
+
+    // Data cards animation - Row 2
+    const row2Cards = document.querySelectorAll('.grid > div:nth-child(n+4)');
+    gsap.fromTo(row2Cards, {
+      opacity: 0,
+      y: 30,
+      scale: 0.8
+    }, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.6,
+      stagger: 0.1,
+      delay: 1.6,
+      ease: "back.out(1.7)"
+    });
+
+    // Numbers animation
+    const numbers = document.querySelectorAll('[class*="text-3xl"], [class*="text-4xl"]');
+    numbers.forEach((number, index) => {
+      gsap.fromTo(number, {
+        scale: 0,
+        rotation: -10
+      }, {
+        scale: 1,
+        rotation: 0,
+        duration: 0.8,
+        delay: 1.8 + (index * 0.1),
+        ease: "elastic.out(1,0.5)"
+      });
+    });
+
+    // Quote animation
+    gsap.fromTo('.inline-block', {
+      opacity: 0,
+      y: 20
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      delay: 2.5,
+      ease: "power3.out"
+    });
+
+    // Timeline animation
+    gsap.fromTo('.inline-flex', {
+      opacity: 0,
+      y: 20
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      delay: 2.8,
+      ease: "power3.out"
+    });
+
+    // Hover effects
+    document.querySelectorAll('.data-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        gsap.to(this, {
+          y: -3,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        gsap.to(this, {
+          y: 0,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+    });
+  </script>
+</body>
+</html>

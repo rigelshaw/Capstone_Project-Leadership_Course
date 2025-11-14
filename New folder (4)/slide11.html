@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Symbol of Trust</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <style>
+    .trust-card {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+    .trust-card:hover {
+      transform: translateY(-5px);
+      background: rgba(212, 175, 55, 0.15);
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #d4af37, #f4e4bc, #d4af37);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .quote-box {
+      background: rgba(212, 175, 55, 0.15);
+      border: 2px solid rgba(212, 175, 55, 0.4);
+      backdrop-filter: blur(15px);
+      border-radius: 16px;
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;background:#3d2914;">
+  <div class="relative w-[1280px] h-[720px] overflow-hidden">
+    
+    <!-- Background Video - Candlelight/Books -->
+    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover opacity-25">
+      <source src="https://media.istockphoto.com/id/1350660635/video/candles.mp4?s=mp4-640x640-is&k=20&c=efPuSU3Khptyug-9LepkRwth__ZqBa4_G4EPHnq09P0=" type="video/mp4">
+    </video>
+    
+    <!-- Background Overlays -->
+    <div class="absolute inset-0 bg-gradient-to-br from-black/50 via-transparent to-black/70"></div>
+    <div class="absolute inset-0 bg-radial-gradient(ellipse at center,transparent 20%,rgba(61,41,20,0.9) 100%)"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10 w-full h-full p-8 flex">
+      <!-- Left Side - Content -->
+      <div class="flex-1 pr-8 flex flex-col">
+        <!-- Header -->
+        <div class="mb-8">
+          <h1 class="text-5xl font-bold mb-2 gold-gradient" style="font-family:'Playfair Display',serif;">
+            Why AMUL Became a Symbol of Trust
+          </h1>
+          <div class="w-32 h-1 bg-gradient-to-r from-transparent via-yellow-600 to-transparent mb-3"></div>
+          <p class="text-lg text-amber-100 opacity-90" style="font-family:'Crimson Text',serif;">
+            3 core psychological reasons behind enduring trust
+          </p>
+        </div>
+
+        <!-- Trust Reasons -->
+        <div class="space-y-6 flex-1">
+          <!-- Reason 1 -->
+          <div class="trust-card p-6">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-900 flex items-center justify-center">
+                <span class="text-2xl text-amber-200">🏠</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-amber-200 mb-2" style="font-family:'Playfair Display',serif;">
+                  1. Familiarity
+                </h3>
+                <p class="text-amber-100 leading-relaxed" style="font-family:'Crimson Text',serif;">
+                  People grew up with it. Generations of Indians have trusted AMUL from childhood to adulthood. 
+                  The brand is woven into the fabric of daily life across the nation.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reason 2 -->
+          <div class="trust-card p-6">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-900 flex items-center justify-center">
+                <span class="text-2xl text-amber-200">⏱️</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-amber-200 mb-2" style="font-family:'Playfair Display',serif;">
+                  2. Consistency
+                </h3>
+                <p class="text-amber-100 leading-relaxed" style="font-family:'Crimson Text',serif;">
+                  Same taste, same quality, same packaging vibe for decades. While evolving with times, 
+                  AMUL never compromised on its core promise of quality and reliability.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reason 3 -->
+          <div class="trust-card p-6">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-900 flex items-center justify-center">
+                <span class="text-2xl text-amber-200">⚖️</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-amber-200 mb-2" style="font-family:'Playfair Display',serif;">
+                  3. Integrity
+                </h3>
+                <p class="text-amber-100 leading-relaxed" style="font-family:'Crimson Text',serif;">
+                  No major scandals. No exploitation. No manipulation. For 77+ years, AMUL maintained 
+                  transparent operations and fair treatment of farmers and consumers alike.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side - Visual & Quote -->
+      <div class="w-1/3 flex flex-col space-y-6">
+        <!-- Main Quote -->
+        <div class="quote-box p-6 flex-1 flex flex-col justify-center">
+          <div class="text-6xl text-amber-400 mb-4 text-center">🕯️</div>
+          <p class="text-xl text-amber-200 italic text-center leading-relaxed mb-4" style="font-family:'Crimson Text',serif;">
+            "Trust is not built in a day."
+          </p>
+          <p class="text-lg text-amber-100 text-center leading-relaxed" style="font-family:'Crimson Text',serif;">
+            Trust is built in the invisible choices leaders make every day.
+          </p>
+        </div>
+
+        <!-- Supporting Image -->
+        <div class="trust-card p-4 flex items-center justify-center">
+          <div class="text-center">
+            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=150&h=150&fit=crop&crop=center" 
+                 alt="Antique Books" 
+                 class="w-24 h-24 rounded-full object-cover border-2 border-amber-400 mx-auto mb-3">
+            <p class="text-amber-200 text-sm" style="font-family:'Crimson Text',serif;">Built on Values</p>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="trust-card p-4">
+          <div class="text-center">
+            <div class="inline-flex items-center space-x-3">
+              <div class="flex items-center space-x-1">
+                <div class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+                <span class="text-amber-200 text-xs" style="font-family:'Crimson Text',serif;">1946</span>
+              </div>
+              <div class="text-amber-100 text-xs">→</div>
+              <div class="flex items-center space-x-1">
+                <div class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+                <span class="text-amber-200 text-xs" style="font-family:'Crimson Text',serif;">2024</span>
+              </div>
+              <div class="text-amber-100 text-xs">→</div>
+              <div class="flex items-center space-x-1">
+                <div class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+                <span class="text-amber-200 text-xs" style="font-family:'Crimson Text',serif;">Beyond</span>
+              </div>
+            </div>
+            <p class="text-amber-100 text-xs mt-2" style="font-family:'Crimson Text',serif;">77+ Years of Consistent Trust</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div class="absolute top-6 left-6 w-3 h-3 rounded-full bg-yellow-500 animate-pulse"></div>
+    <div class="absolute top-6 right-6 w-3 h-3 rounded-full bg-yellow-500 animate-pulse"></div>
+    <div class="absolute bottom-6 left-6 w-3 h-3 rounded-full bg-yellow-500 animate-pulse"></div>
+    <div class="absolute bottom-6 right-6 w-3 h-3 rounded-full bg-yellow-500 animate-pulse"></div>
+  </div>
+
+  <script>
+    gsap.registerPlugin(SplitText);
+    
+    // Background video animation
+    const video = document.querySelector('video');
+    gsap.fromTo(video, {
+      opacity: 0,
+      scale: 1.1
+    }, {
+      opacity: 0.25,
+      scale: 1,
+      duration: 2,
+      ease: "power3.out"
+    });
+
+    // Title animation
+    const title = document.querySelector('h1');
+    const titleSplit = SplitText.create(title, {
+      type: "chars"
+    });
+    
+    gsap.fromTo(titleSplit.chars, {
+      opacity: 0,
+      yPercent: 50,
+      rotation: 10
+    }, {
+      opacity: 1,
+      yPercent: 0,
+      rotation: 0,
+      duration: 0.8,
+      stagger: 0.02,
+      delay: 0.5,
+      ease: "back.out(1.7)",
+      onComplete: () => titleSplit.revert()
+    });
+
+    // Trust cards animation - left side
+    const trustCards = document.querySelectorAll('.trust-card');
+    gsap.fromTo(trustCards, {
+      opacity: 0,
+      x: -50,
+      scale: 0.9
+    }, {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      duration: 0.8,
+      stagger: 0.2,
+      delay: 1.2,
+      ease: "back.out(1.7)"
+    });
+
+    // Quote box animation - right side
+    const quoteBox = document.querySelector('.quote-box');
+    gsap.fromTo(quoteBox, {
+      opacity: 0,
+      x: 50,
+      scale: 0.9
+    }, {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      duration: 1,
+      delay: 1.8,
+      ease: "power3.out"
+    });
+
+    // Emoji icons animation
+    const emojis = document.querySelectorAll('.text-2xl');
+    gsap.fromTo(emojis, {
+      scale: 0,
+      rotation: -180
+    }, {
+      scale: 1,
+      rotation: 0,
+      duration: 0.8,
+      stagger: 0.15,
+      delay: 1.5,
+      ease: "elastic.out(1,0.5)"
+    });
+
+    // Image animation
+    const image = document.querySelector('img');
+    gsap.fromTo(image, {
+      opacity: 0,
+      scale: 0.5,
+      rotation: 10
+    }, {
+      opacity: 1,
+      scale: 1,
+      rotation: 0,
+      duration: 1,
+      delay: 2.2,
+      ease: "back.out(1.7)"
+    });
+
+    // Timeline animation
+    const timeline = document.querySelector('.inline-flex');
+    gsap.fromTo(timeline, {
+      opacity: 0,
+      y: 20
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      delay: 2.5,
+      ease: "power3.out"
+    });
+
+    // Decorative dots animation
+    const dots = document.querySelectorAll('.absolute.rounded-full');
+    gsap.fromTo(dots, {
+      scale: 0,
+      rotation: 180
+    }, {
+      scale: 1,
+      rotation: 0,
+      duration: 1,
+      delay: 3,
+      ease: "elastic.out(1,0.5)"
+    });
+
+    // Hover effects
+    document.querySelectorAll('.trust-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        gsap.to(this, {
+          y: -3,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        gsap.to(this, {
+          y: 0,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>AMUL: Building India's Most Trusted Brand</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&amp;family=Crimson+Text:wght@400;600&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;">
+  <div class="relative flex flex-col justify-center items-center" style="width:1280px;height:fit-content;min-height:720px;overflow:hidden;padding:48px;background:#3d2914;">
+    <video autoplay="" muted="" loop="" class="absolute inset-0 w-full h-full object-cover opacity-40" style="z-index:1;">
+      <source src="https://voxdeck-sg-s3.voxdeck.ai/render/prod/aigc/img/_OjvyOp2RZmnpfZ9fwXyZg_720p.webm" type="video/mp4">
+    </video>
+    <div class="absolute inset-0 bg-gradient-to-br from-black/60 via-transparent to-black/80" style="z-index:2;"></div>
+    <div class="absolute inset-0" style="z-index:3;background:radial-gradient(ellipse at center,transparent 30%,rgba(61,41,20,0.8) 100%);"></div>
+    <div class="relative z-10 text-center max-w-4xl">
+      <div class="mb-8">
+        <img src="https://voxdeck-sg-s3.voxdeck.ai/aps/prod/oqEncpLzRdCzUX2drQ6Pcw_960x1280.jpeg" alt="AMUL Logo" class="mx-auto opacity-90" style="width:200px;height:120px;object-fit:contain;filter:sepia(20%) contrast(1.1);">
+      </div>
+      <h1 class="title text-6xl font-bold mb-6 text-center leading-tight" style="font-family:'Playfair Display',serif;background:linear-gradient(135deg,#d4af37 0%,#f4e4bc 50%,#d4af37 100%);background-clip:text;-webkit-background-clip:text;color:transparent;text-shadow:2px 2px 4px rgba(0,0,0,0.3);line-height:normal;">
+        AMUL: Building India's Most Trusted Brand
+      </h1>
+      <div class="w-32 h-1 bg-gradient-to-r from-transparent via-yellow-600 to-transparent mx-auto mb-6 opacity-80"></div>
+      <h2 class="subtitle text-2xl font-semibold text-amber-100 opacity-90 leading-relaxed" style="font-family:'Crimson Text',serif;text-shadow:1px 1px 2px rgba(0,0,0,0.5);">
+        A leadership, trust-building, and brand heritage analysis
+      </h2>
+      <div class="mt-12 flex justify-center items-center space-x-8 opacity-70">
+        <div class="w-2 h-2 bg-yellow-600 rounded-full animate-pulse"></div>
+        <div class="text-amber-200 text-sm tracking-wider" style="font-family:'Crimson Text',serif;">Est. 1946 • A People's Movement</div>
+        <div class="w-2 h-2 bg-yellow-600 rounded-full animate-pulse"></div>
+      </div>
+    </div>
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-amber-300 opacity-60">
+      <div class="flex flex-col items-center">
+        <div class="text-xs mb-2" style="font-family:'Crimson Text',serif;">Scroll to explore</div>
+        <div class="w-1 h-6 border border-amber-300 rounded-full flex justify-center">
+          <div class="w-0.5 h-2 bg-amber-300 rounded-full mt-1 animate-bounce"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    gsap.registerPlugin(SplitText);
+    const video = document.querySelector('video');
+    const title = document.querySelector('.title');
+    const subtitle = document.querySelector('.subtitle');
+    const logo = document.querySelector('img');
+    gsap.fromTo(video, {
+      opacity: 0,
+      scale: 1.2
+    }, {
+      opacity: 0.4,
+      scale: 1,
+      duration: 2,
+      ease: "power3.out"
+    });
+    gsap.fromTo(logo, {
+      opacity: 0,
+      y: -30,
+      scale: 0.8
+    }, {
+      opacity: 0.9,
+      y: 0,
+      scale: 1,
+      duration: 1.2,
+      delay: 0.5,
+      ease: "back.out(1.7)"
+    });
+    const titleBg = getComputedStyle(title).background;
+    const titleSplit = SplitText.create(title, {
+      type: "chars"
+    });
+    titleSplit.chars.forEach(ele => {
+      ele.style.background = titleBg;
+      ele.style.backgroundClip = 'text';
+      ele.style.webkitBackgroundClip = 'text';
+      const rect = title.getBoundingClientRect();
+      ele.style.backgroundSize = `${rect.width}px ${rect.height}px`;
+      const eleRect = ele.getBoundingClientRect();
+      ele.style.backgroundPosition = `${rect.left-eleRect.left}px ${rect.top-eleRect.top}px`;
+    });
+    gsap.fromTo(titleSplit.chars, {
+      opacity: 0,
+      yPercent: 50,
+      rotation: 15
+    }, {
+      opacity: 1,
+      yPercent: 0,
+      rotation: 0,
+      duration: 0.8,
+      stagger: 0.03,
+      delay: 1,
+      ease: "back.out(1.7)",
+      onComplete: () => titleSplit.revert()
+    });
+    gsap.fromTo(subtitle, {
+      opacity: 0,
+      y: 30
+    }, {
+      opacity: 0.9,
+      y: 0,
+      duration: 1,
+      delay: 1.8,
+      ease: "power3.out"
+    });
+    const decorativeElements = document.querySelectorAll('.animate-pulse, .animate-bounce');
+    decorativeElements.forEach((el, i) => {
+      gsap.fromTo(el, {
+        opacity: 0,
+        scale: 0
+      }, {
+        opacity: 0.7,
+        scale: 1,
+        duration: 0.6,
+        delay: 2.2 + i * 0.1,
+        ease: "elastic.out(1,0.5)"
+      });
+    });
+  </script>
+
+</body>
+</html>

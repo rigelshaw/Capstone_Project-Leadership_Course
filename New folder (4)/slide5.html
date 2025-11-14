@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>How AMUL Built Trust</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="margin:0;padding:0;overflow:hidden;background:radial-gradient(ellipse at center, #4a3728 0%, #3d2914 50%, #2a1f0f 100%);">
+  <div class="flex flex-col justify-center items-center relative" style="width:1280px;height:fit-content;min-height:720px;overflow:hidden;padding:48px;font-family:'Crimson Text',serif;">
+    <div class="absolute inset-0 opacity-20" style="background:url('data:image/svg+xml,&lt;svg xmlns=" http:="" www.w3.org="" 2000="" svg"="" viewbox="0 0 100 100">
+      <defs>
+        <filter id="paper">
+          <feturbulence basefrequency="0.04" numoctaves="5" result="noise">
+            <fecolormatrix in="noise" type="saturate" values="0"></fecolormatrix>
+          </feturbulence>
+        </filter>
+      </defs>
+      <rect width="100" height="100" filter="url(%23paper)" opacity="0.4">');"&gt;</rect>
+    </div>
+    <div class="text-center mb-12 relative z-10">
+      <h1 class="title text-5xl font-bold mb-4" style="font-family:'Playfair Display',serif;color:#d4af37;text-shadow:2px 2px 4px rgba(0,0,0,0.5);">How AMUL Built Trust</h1>
+      <p class="subtitle text-xl text-amber-100 opacity-90">AMUL's trust didn't come from "brand campaigns."<br>It came from four pillars:</p>
+    </div>
+    <div class="grid grid-cols-2 gap-8 w-full max-w-5xl relative z-10">
+      <div class="pillar-card bg-gradient-to-br from-amber-50 to-amber-100 p-6 rounded-lg shadow-2xl border-2 border-amber-200" style="background:linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);box-shadow:0 20px 40px rgba(0,0,0,0.3);">
+        <div class="flex items-center mb-4"><i class="fas fa-users text-3xl text-amber-700 mr-4"></i>
+          <h3 class="text-2xl font-bold text-amber-900" style="font-family:'Playfair Display',serif;">People-first model</h3>
+        </div>
+        <ul class="text-amber-800 space-y-2">
+          <li class="flex items-start"><span class="text-amber-600 mr-2">•</span>Farmers are owners, not workers.</li>
+          <li class="flex items-start"><span class="text-amber-600 mr-2">•</span>Profit goes back to families.</li>
+        </ul>
+      </div>
+      <div class="pillar-card bg-gradient-to-br from-amber-50 to-amber-100 p-6 rounded-lg shadow-2xl border-2 border-amber-200" style="background:linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);box-shadow:0 20px 40px rgba(0,0,0,0.3);">
+        <div class="flex items-center mb-4"><i class="fas fa-shield-alt text-3xl text-amber-700 mr-4"></i>
+          <h3 class="text-2xl font-bold text-amber-900" style="font-family:'Playfair Display',serif;">Product reliability</h3>
+        </div>
+        <ul class="text-amber-800 space-y-2">
+          <li class="flex items-start"><span class="text-amber-600 mr-2">•</span>Standards never compromised.</li>
+          <li class="flex items-start"><span class="text-amber-600 mr-2">•</span>Cold chain network—India's strongest dairy distribution.</li>
+        </ul>
+      </div>
+      <div class="pillar-card bg-gradient-to-br from-amber-50 to-amber-100 p-6 rounded-lg shadow-2xl border-2 border-amber-200" style="background:linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);box-shadow:0 20px 40px rgba(0,0,0,0.3);">
+        <div class="flex items-center mb-4"><i class="fas fa-bullhorn text-3xl text-amber-700 mr-4"></i>
+          <h3 class="text-2xl font-bold text-amber-900" style="font-family:'Playfair Display',serif;">Purpose-driven marketing</h3>
+        </div>
+        <ul class="text-amber-800 space-y-2">
+          <li class="flex items-start"><span class="text-amber-600 mr-2">•</span>Honest, humorous, culturally relevant.</li>
+        </ul>
+      </div>
+      <div class="pillar-card bg-gradient-to-br from-amber-50 to-amber-100 p-6 rounded-lg shadow-2xl border-2 border-amber-200" style="background:linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);box-shadow:0 20px 40px rgba(0,0,0,0.3);">
+        <div class="flex items-center mb-4"><i class="fas fa-balance-scale text-3xl text-amber-700 mr-4"></i>
+          <h3 class="text-2xl font-bold text-amber-900" style="font-family:'Playfair Display',serif;">Ethical leadership</h3>
+        </div>
+        <ul class="text-amber-800 space-y-2">
+          <li class="flex items-start"><span class="text-amber-600 mr-2">•</span>Consistency over 75+ years.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script>
+    gsap.registerPlugin(SplitText);
+    const title = document.querySelector('.title');
+    const titleSplit = SplitText.create(title, {
+      type: "chars"
+    });
+    gsap.fromTo(titleSplit.chars, {
+      opacity: 0,
+      yPercent: 50,
+      rotation: 90
+    }, {
+      opacity: 1,
+      yPercent: 0,
+      rotation: 0,
+      duration: 0.8,
+      stagger: 0.02,
+      ease: "elastic",
+      onComplete: () => {
+        titleSplit.revert();
+      }
+    });
+    const subtitle = document.querySelector('.subtitle');
+    gsap.fromTo(subtitle, {
+      opacity: 0,
+      y: 30
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      delay: 0.5,
+      ease: "power2.out"
+    });
+    const pillarCards = document.querySelectorAll('.pillar-card');
+    gsap.fromTo(pillarCards, {
+      opacity: 0,
+      y: 50,
+      scale: 0.8
+    }, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.8,
+      stagger: 0.2,
+      delay: 1,
+      ease: "back.out(1.7)"
+    });
+  </script>
+</body>
+</html>
