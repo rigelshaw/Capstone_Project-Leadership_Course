@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>India's Emotional Brand</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <style>
+    .emotional-card {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+    .emotional-card:hover {
+      transform: translateY(-5px);
+      background: rgba(212, 175, 55, 0.15);
+      border-color: rgba(212, 175, 55, 0.5);
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #d4af37, #f4e4bc, #d4af37);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .heart-pulse {
+      animation: heartPulse 2s ease-in-out infinite;
+    }
+    @keyframes heartPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    .sunrise-overlay {
+      background: linear-gradient(180deg, rgba(212,175,55,0.3) 0%, transparent 50%, rgba(61,41,20,0.8) 100%);
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;background:#3d2914;">
+  <div class="relative w-[1280px] h-[720px] overflow-hidden">
+    
+    <!-- Background Video - Sunrise over Farms -->
+    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover opacity-30">
+      <source src="https://www.shutterstock.com/shutterstock/videos/3739663933/preview/stock-footage-a-commercial-private-jet-flies-through-soft-clouds-against-a-picturesque-sunset-the-concept-of.webm" type="video/mp4">
+    </video>
+    
+    <!-- Background Overlays -->
+    <div class="absolute inset-0 sunrise-overlay"></div>
+    <div class="absolute inset-0 bg-radial-gradient(ellipse at center,transparent 30%,rgba(61,41,20,0.9) 100%)"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10 w-full h-full p-8 flex flex-col">
+      <!-- Header -->
+      <div class="text-center mb-8">
+        <h1 class="text-6xl font-bold mb-2 gold-gradient" style="font-family:'Playfair Display',serif;">
+          AMUL = India's Emotional Brand
+        </h1>
+        <div class="w-32 h-1 mx-auto bg-gradient-to-r from-transparent via-yellow-600 to-transparent mb-3"></div>
+        <p class="text-xl text-amber-100 opacity-90" style="font-family:'Crimson Text',serif;">
+          More than a brand - a part of India's heart and home
+        </p>
+      </div>
+
+      <!-- Main Emotional Connection Points -->
+      <div class="grid grid-cols-2 gap-6 flex-1 mb-6">
+        <!-- Left Column -->
+        <div class="space-y-6">
+          <!-- Kitchen Presence -->
+          <div class="emotional-card p-6">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-16 h-16 rounded-full bg-amber-900 flex items-center justify-center heart-pulse">
+                  <span class="text-3xl text-amber-200">🏠</span>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-amber-200 mb-2" style="font-family:'Playfair Display',serif;">
+                  In Every Indian Kitchen
+                </h3>
+                <p class="text-amber-100 leading-relaxed" style="font-family:'Crimson Text',serif;">
+                  From morning tea to dinner desserts, AMUL products are essential companions in daily life across millions of Indian households.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Childhood Memories -->
+          <div class="emotional-card p-6">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-16 h-16 rounded-full bg-amber-900 flex items-center justify-center">
+                  <span class="text-3xl text-amber-200">👶</span>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-amber-200 mb-2" style="font-family:'Playfair Display',serif;">
+                  In Every Childhood Memory
+                </h3>
+                <p class="text-amber-100 leading-relaxed" style="font-family:'Crimson Text',serif;">
+                  Generations have grown up with AMUL butter, milk, and ice cream - creating nostalgic connections that last a lifetime.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="space-y-6">
+          <!-- Comfort & Nostalgia -->
+          <div class="emotional-card p-6">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-16 h-16 rounded-full bg-amber-900 flex items-center justify-center">
+                  <span class="text-3xl text-amber-200">❤️</span>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-amber-200 mb-2" style="font-family:'Playfair Display',serif;">
+                  Comfort & Nostalgia
+                </h3>
+                <p class="text-amber-100 leading-relaxed" style="font-family:'Crimson Text',serif;">
+                  The taste of AMUL brings back memories of family gatherings, festivals, and simple joys of childhood.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- National Values -->
+          <div class="emotional-card p-6">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-16 h-16 rounded-full bg-amber-900 flex items-center justify-center">
+                  <span class="text-3xl text-amber-200">🤝</span>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-amber-200 mb-2" style="font-family:'Playfair Display',serif;">
+                  National Values
+                </h3>
+                <p class="text-amber-100 leading-relaxed" style="font-family:'Crimson Text',serif;">
+                  Represents fairness, unity, empowerment, and the growth story of New India.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Section - Main Quote & Visual -->
+      <div class="flex space-x-6">
+        <!-- Family Image -->
+        <div class="flex-1 emotional-card p-4 flex items-center justify-center">
+          <div class="text-center">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmFlijiEYz4_EkuaMPxZVEdu214XLXH1WUhQ&s" 
+                 alt="Indian Family" 
+                 class="w-full h-32 object-cover rounded-lg mb-3 opacity-90">
+            <p class="text-amber-200 text-sm" style="font-family:'Crimson Text',serif;">Connecting Generations</p>
+          </div>
+        </div>
+
+        <!-- Main Quote -->
+        <div class="flex-1 emotional-card p-6 flex flex-col justify-center items-center text-center">
+          <div class="text-5xl text-amber-400 mb-4 heart-pulse">❤️</div>
+          <p class="text-2xl text-amber-200 italic mb-4 leading-relaxed" style="font-family:'Crimson Text',serif;">
+            "A brand that feels like home."
+          </p>
+          <div class="w-24 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
+        </div>
+
+        <!-- Cultural Impact -->
+        <div class="flex-1 emotional-card p-4">
+          <div class="text-center h-full flex flex-col justify-center">
+            <div class="space-y-3">
+              <div class="flex items-center justify-center space-x-2">
+                <div class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+                <span class="text-amber-200 text-sm" style="font-family:'Crimson Text',serif;">Festivals</span>
+              </div>
+              <div class="flex items-center justify-center space-x-2">
+                <div class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+                <span class="text-amber-200 text-sm" style="font-family:'Crimson Text',serif;">Celebrations</span>
+              </div>
+              <div class="flex items-center justify-center space-x-2">
+                <div class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+                <span class="text-amber-200 text-sm" style="font-family:'Crimson Text',serif;">Daily Rituals</span>
+              </div>
+              <div class="flex items-center justify-center space-x-2">
+                <div class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+                <span class="text-amber-200 text-sm" style="font-family:'Crimson Text',serif;">Family Traditions</span>
+              </div>
+            </div>
+            <p class="text-amber-100 text-xs mt-4" style="font-family:'Crimson Text',serif;">Woven into India's Cultural Fabric</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Hearts -->
+    <div class="absolute top-20 left-20 text-2xl opacity-60 heart-pulse">💛</div>
+    <div class="absolute top-40 right-32 text-xl opacity-50 heart-pulse" style="animation-delay: 0.5s;">💛</div>
+    <div class="absolute bottom-32 left-32 text-lg opacity-40 heart-pulse" style="animation-delay: 1s;">💛</div>
+    <div class="absolute bottom-20 right-20 text-xl opacity-50 heart-pulse" style="animation-delay: 1.5s;">💛</div>
+
+    <!-- Decorative Elements -->
+    <div class="absolute top-6 left-6 w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+    <div class="absolute top-6 right-6 w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+    <div class="absolute bottom-6 left-6 w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+    <div class="absolute bottom-6 right-6 w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+  </div>
+
+  <script>
+    gsap.registerPlugin(SplitText);
+    
+    // Background video animation
+    const video = document.querySelector('video');
+    gsap.fromTo(video, {
+      opacity: 0,
+      scale: 1.1
+    }, {
+      opacity: 0.3,
+      scale: 1,
+      duration: 2,
+      ease: "power3.out"
+    });
+
+    // Title animation
+    const title = document.querySelector('h1');
+    const titleSplit = SplitText.create(title, {
+      type: "chars"
+    });
+    
+    gsap.fromTo(titleSplit.chars, {
+      opacity: 0,
+      yPercent: 50,
+      rotation: 10
+    }, {
+      opacity: 1,
+      yPercent: 0,
+      rotation: 0,
+      duration: 0.8,
+      stagger: 0.02,
+      delay: 0.5,
+      ease: "back.out(1.7)",
+      onComplete: () => titleSplit.revert()
+    });
+
+    // Emotional cards animation - left column
+    const leftCards = document.querySelectorAll('.space-y-6:first-child .emotional-card');
+    gsap.fromTo(leftCards, {
+      opacity: 0,
+      x: -50,
+      scale: 0.9
+    }, {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      duration: 0.8,
+      stagger: 0.2,
+      delay: 1.2,
+      ease: "back.out(1.7)"
+    });
+
+    // Emotional cards animation - right column
+    const rightCards = document.querySelectorAll('.space-y-6:last-child .emotional-card');
+    gsap.fromTo(rightCards, {
+      opacity: 0,
+      x: 50,
+      scale: 0.9
+    }, {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      duration: 0.8,
+      stagger: 0.2,
+      delay: 1.5,
+      ease: "back.out(1.7)"
+    });
+
+    // Emoji icons animation
+    const emojis = document.querySelectorAll('.text-3xl');
+    gsap.fromTo(emojis, {
+      scale: 0,
+      rotation: -180
+    }, {
+      scale: 1,
+      rotation: 0,
+      duration: 0.8,
+      stagger: 0.15,
+      delay: 1.8,
+      ease: "elastic.out(1,0.5)"
+    });
+
+    // Bottom section animation
+    const bottomCards = document.querySelectorAll('.flex.space-x-6 > div');
+    gsap.fromTo(bottomCards, {
+      opacity: 0,
+      y: 30
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      delay: 2.2,
+      ease: "power3.out"
+    });
+
+    // Image animation
+    const image = document.querySelector('img');
+    gsap.fromTo(image, {
+      opacity: 0,
+      scale: 0.8
+    }, {
+      opacity: 0.9,
+      scale: 1,
+      duration: 1,
+      delay: 2.5,
+      ease: "back.out(1.7)"
+    });
+
+    // Main heart animation
+    const mainHeart = document.querySelector('.text-5xl');
+    gsap.fromTo(mainHeart, {
+      scale: 0,
+      rotation: -360
+    }, {
+      scale: 1,
+      rotation: 0,
+      duration: 1.5,
+      delay: 2.8,
+      ease: "elastic.out(1,0.5)"
+    });
+
+    // Floating hearts animation
+    const floatingHearts = document.querySelectorAll('.absolute.text-2xl, .absolute.text-xl, .absolute.text-lg');
+    floatingHearts.forEach((heart, index) => {
+      gsap.fromTo(heart, {
+        y: 100,
+        opacity: 0
+      }, {
+        y: 0,
+        opacity: 0.4 + (index * 0.1),
+        duration: 1.5,
+        delay: 3 + (index * 0.3),
+        ease: "back.out(1.7)"
+      });
+    });
+
+    // Cultural impact dots animation
+    const dots = document.querySelectorAll('.flex.items-center.justify-center.space-x-2');
+    gsap.fromTo(dots, {
+      opacity: 0,
+      x: 20
+    }, {
+      opacity: 1,
+      x: 0,
+      duration: 0.6,
+      stagger: 0.1,
+      delay: 3.2,
+      ease: "power2.out"
+    });
+
+    // Decorative dots animation
+    const decorativeDots = document.querySelectorAll('.absolute.rounded-full');
+    gsap.fromTo(decorativeDots, {
+      scale: 0,
+      rotation: 180
+    }, {
+      scale: 1,
+      rotation: 0,
+      duration: 1,
+      delay: 3.5,
+      ease: "elastic.out(1,0.5)"
+    });
+
+    // Hover effects
+    document.querySelectorAll('.emotional-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        gsap.to(this, {
+          y: -5,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+        const icon = this.querySelector('.w-16.h-16');
+        if (icon) {
+          gsap.to(icon, {
+            scale: 1.1,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        }
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        gsap.to(this, {
+          y: 0,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+        const icon = this.querySelector('.w-16.h-16');
+        if (icon) {
+          gsap.to(icon, {
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        }
+      });
+    });
+
+    // Continuous floating animation for hearts
+    floatingHearts.forEach((heart, index) => {
+      gsap.to(heart, {
+        y: -20,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: index * 0.5
+      });
+    });
+  </script>
+</body>
+</html>

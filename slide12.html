@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Leadership Lessons</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <style>
+    .lesson-card {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+    .lesson-card:hover {
+      transform: translateY(-5px);
+      background: rgba(212, 175, 55, 0.15);
+      border-color: rgba(212, 175, 55, 0.5);
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #d4af37, #f4e4bc, #d4af37);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .icon-circle {
+      background: rgba(212, 175, 55, 0.2);
+      border: 2px solid rgba(212, 175, 55, 0.4);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;background:#3d2914;">
+  <div class="relative w-[1280px] h-[720px] overflow-hidden">
+    
+    <!-- Background Video - Leadership/Teamwork -->
+    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover opacity-20">
+      <source src="https://www.shutterstock.com/shutterstock/videos/3905493049/preview/stock-footage-diverse-team-of-business-professionals-attending-a-corporate-presentation-in-a-modern-conference.webm" type="video/mp4">
+    </video>
+    
+    <!-- Background Overlays -->
+    <div class="absolute inset-0 bg-gradient-to-br from-black/50 via-transparent to-black/70"></div>
+    <div class="absolute inset-0 bg-radial-gradient(ellipse at center,transparent 20%,rgba(61,41,20,0.9) 100%)"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10 w-full h-full p-8 flex flex-col">
+      <!-- Header -->
+      <div class="text-center mb-8">
+        <h1 class="text-5xl font-bold mb-2 gold-gradient" style="font-family:'Playfair Display',serif;">
+          Leadership Lessons from AMUL
+        </h1>
+        <div class="w-32 h-1 mx-auto bg-gradient-to-r from-transparent via-yellow-600 to-transparent mb-3"></div>
+        <p class="text-lg text-amber-100 opacity-90" style="font-family:'Crimson Text',serif;">
+          Timeless principles that built India's most trusted brand
+        </p>
+      </div>
+
+      <!-- Leadership Grid - 2x4 Layout -->
+      <div class="grid grid-cols-2 grid-rows-4 gap-4 flex-1">
+        <!-- Row 1 -->
+        <div class="lesson-card p-4 flex items-center space-x-4">
+          <div class="icon-circle flex-shrink-0">
+            <span class="text-2xl text-amber-200">👥</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-amber-200 mb-1" style="font-family:'Playfair Display',serif;">
+              Lead with People
+            </h3>
+            <p class="text-amber-100 text-sm" style="font-family:'Crimson Text',serif;">
+              Lead with people, not above them
+            </p>
+          </div>
+        </div>
+
+        <div class="lesson-card p-4 flex items-center space-x-4">
+          <div class="icon-circle flex-shrink-0">
+            <span class="text-2xl text-amber-200">🔍</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-amber-200 mb-1" style="font-family:'Playfair Display',serif;">
+              Be Transparent
+            </h3>
+            <p class="text-amber-100 text-sm" style="font-family:'Crimson Text',serif;">
+              Especially in financial matters
+            </p>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="lesson-card p-4 flex items-center space-x-4">
+          <div class="icon-circle flex-shrink-0">
+            <span class="text-2xl text-amber-200">🛡️</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-amber-200 mb-1" style="font-family:'Playfair Display',serif;">
+              Protect the Weak
+            </h3>
+            <p class="text-amber-100 text-sm" style="font-family:'Crimson Text',serif;">
+              Build systems that protect the vulnerable
+            </p>
+          </div>
+        </div>
+
+        <div class="lesson-card p-4 flex items-center space-x-4">
+          <div class="icon-circle flex-shrink-0">
+            <span class="text-2xl text-amber-200">🎯</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-amber-200 mb-1" style="font-family:'Playfair Display',serif;">
+              Stay Consistent
+            </h3>
+            <p class="text-amber-100 text-sm" style="font-family:'Crimson Text',serif;">
+              Maintain values through changing times
+            </p>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="lesson-card p-4 flex items-center space-x-4">
+          <div class="icon-circle flex-shrink-0">
+            <span class="text-2xl text-amber-200">💡</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-amber-200 mb-1" style="font-family:'Playfair Display',serif;">
+              Innovate Responsibly
+            </h3>
+            <p class="text-amber-100 text-sm" style="font-family:'Crimson Text',serif;">
+              Technology serving humanity
+            </p>
+          </div>
+        </div>
+
+        <div class="lesson-card p-4 flex items-center space-x-4">
+          <div class="icon-circle flex-shrink-0">
+            <span class="text-2xl text-amber-200">😄</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-amber-200 mb-1" style="font-family:'Playfair Display',serif;">
+              Use Humor
+            </h3>
+            <p class="text-amber-100 text-sm" style="font-family:'Crimson Text',serif;">
+              Connect through wit and warmth
+            </p>
+          </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="lesson-card p-4 flex items-center space-x-4">
+          <div class="icon-circle flex-shrink-0">
+            <span class="text-2xl text-amber-200">🤝</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-amber-200 mb-1" style="font-family:'Playfair Display',serif;">
+              Treat as Partners
+            </h3>
+            <p class="text-amber-100 text-sm" style="font-family:'Crimson Text',serif;">
+              Customers as partners in growth
+            </p>
+          </div>
+        </div>
+
+        <div class="lesson-card p-4 flex items-center space-x-4">
+          <div class="icon-circle flex-shrink-0">
+            <span class="text-2xl text-amber-200">🌟</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-amber-200 mb-1" style="font-family:'Playfair Display',serif;">
+              Empower Ownership
+            </h3>
+            <p class="text-amber-100 text-sm" style="font-family:'Crimson Text',serif;">
+              Create stakeholders, not employees
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="mt-6 flex space-x-6">
+        <!-- Leadership Quote -->
+        <div class="flex-1 lesson-card p-6">
+          <div class="text-center">
+            <div class="text-4xl text-amber-400 mb-3">👑</div>
+            <p class="text-lg text-amber-200 italic mb-2" style="font-family:'Crimson Text',serif;">
+              "True leadership creates more leaders, not more followers."
+            </p>
+            <p class="text-amber-100 text-sm" style="font-family:'Crimson Text',serif;">
+              - AMUL's Cooperative Model
+            </p>
+          </div>
+        </div>
+
+        <!-- Legacy Timeline -->
+        <div class="flex-1 lesson-card p-4 flex items-center justify-center">
+          <div class="text-center">
+            <div class="flex items-center justify-center space-x-8 mb-3">
+              <div class="text-center">
+                <div class="text-2xl text-amber-400 mb-1">👨‍🌾</div>
+                <p class="text-amber-200 text-xs" style="font-family:'Crimson Text',serif;">Farmers First</p>
+              </div>
+              <div class="text-amber-100">→</div>
+              <div class="text-center">
+                <div class="text-2xl text-amber-400 mb-1">🏭</div>
+                <p class="text-amber-200 text-xs" style="font-family:'Crimson Text',serif;">Quality Focus</p>
+              </div>
+              <div class="text-amber-100">→</div>
+              <div class="text-center">
+                <div class="text-2xl text-amber-400 mb-1">🌍</div>
+                <p class="text-amber-200 text-xs" style="font-family:'Crimson Text',serif;">National Impact</p>
+              </div>
+            </div>
+            <p class="text-amber-100 text-xs" style="font-family:'Crimson Text',serif;">The AMUL Leadership Journey</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div class="absolute top-4 left-4 w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+    <div class="absolute top-4 right-4 w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+    <div class="absolute bottom-4 left-4 w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+    <div class="absolute bottom-4 right-4 w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+  </div>
+
+  <script>
+    gsap.registerPlugin(SplitText);
+    
+    // Background video animation
+    const video = document.querySelector('video');
+    gsap.fromTo(video, {
+      opacity: 0,
+      scale: 1.1
+    }, {
+      opacity: 0.2,
+      scale: 1,
+      duration: 2,
+      ease: "power3.out"
+    });
+
+    // Title animation
+    const title = document.querySelector('h1');
+    const titleSplit = SplitText.create(title, {
+      type: "chars"
+    });
+    
+    gsap.fromTo(titleSplit.chars, {
+      opacity: 0,
+      yPercent: 50,
+      rotation: 10
+    }, {
+      opacity: 1,
+      yPercent: 0,
+      rotation: 0,
+      duration: 0.8,
+      stagger: 0.02,
+      delay: 0.5,
+      ease: "back.out(1.7)",
+      onComplete: () => titleSplit.revert()
+    });
+
+    // Lesson cards animation - staggered by rows
+    const rows = document.querySelectorAll('.grid > div');
+    gsap.fromTo(rows, {
+      opacity: 0,
+      y: 30,
+      scale: 0.9
+    }, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.6,
+      stagger: {
+        amount: 1.5,
+        grid: [4, 2],
+        from: "start"
+      },
+      delay: 1.2,
+      ease: "back.out(1.7)"
+    });
+
+    // Icon animations
+    const icons = document.querySelectorAll('.text-2xl');
+    gsap.fromTo(icons, {
+      scale: 0,
+      rotation: -180
+    }, {
+      scale: 1,
+      rotation: 0,
+      duration: 0.8,
+      stagger: 0.1,
+      delay: 1.5,
+      ease: "elastic.out(1,0.5)"
+    });
+
+    // Bottom section animation
+    const bottomSection = document.querySelectorAll('.mt-6 > div');
+    gsap.fromTo(bottomSection, {
+      opacity: 0,
+      y: 20
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      delay: 2.5,
+      ease: "power3.out"
+    });
+
+    // Decorative dots animation
+    const dots = document.querySelectorAll('.absolute.rounded-full');
+    gsap.fromTo(dots, {
+      scale: 0,
+      rotation: 180
+    }, {
+      scale: 1,
+      rotation: 0,
+      duration: 1,
+      delay: 3,
+      ease: "elastic.out(1,0.5)"
+    });
+
+    // Hover effects with enhanced animation
+    document.querySelectorAll('.lesson-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        gsap.to(this, {
+          y: -5,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+        const icon = this.querySelector('.icon-circle');
+        gsap.to(icon, {
+          scale: 1.1,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        gsap.to(this, {
+          y: 0,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+        const icon = this.querySelector('.icon-circle');
+        gsap.to(icon, {
+          scale: 1,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+    });
+
+    // Continuous subtle animation for icons
+    gsap.to('.icon-circle', {
+      rotation: 360,
+      duration: 20,
+      repeat: -1,
+      ease: "none"
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMUL: Building India's Most Trusted Brand - Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #3d2914;
+            font-family: 'Crimson Text', serif;
+            overflow: hidden;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37, #f4e4bc, #d4af37);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .nav-btn {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .nav-btn:hover {
+            background: rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+        }
+        .slide-thumbnail {
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .slide-thumbnail:hover {
+            border-color: rgba(212, 175, 55, 0.6);
+            transform: scale(1.05);
+        }
+        .slide-thumbnail.active {
+            border-color: #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+        .progress-bar {
+            background: rgba(212, 175, 55, 0.2);
+            height: 4px;
+            border-radius: 2px;
+        }
+        .progress-fill {
+            background: linear-gradient(90deg, #d4af37, #f4e4bc);
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        
+        /* Slide container scaling */
+        .slide-container {
+            width: 100%;
+            height: calc(100vh - 140px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #3d2914;
+            overflow: hidden;
+            transition: height 0.3s ease;
+        }
+        
+        /* Fullscreen styles */
+        body:fullscreen .slide-container,
+        body:-webkit-full-screen .slide-container,
+        body:-moz-full-screen .slide-container,
+        body:-ms-fullscreen .slide-container {
+            height: 100vh;
+        }
+        
+        .slide-wrapper {
+            transform-origin: center center;
+            transition: transform 0.3s ease;
+        }
+        
+        .slide-iframe {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Header and controls - hide in fullscreen */
+        .header-bar {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        body:fullscreen .header-bar,
+        body:-webkit-full-screen .header-bar,
+        body:-moz-full-screen .header-bar,
+        body:-ms-fullscreen .header-bar {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .navigation-bar {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        body:fullscreen .navigation-bar,
+        body:-webkit-full-screen .navigation-bar,
+        body:-moz-full-screen .navigation-bar,
+        body:-ms-fullscreen .navigation-bar {
+            transform: translateY(100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        /* Zoom controls - show in fullscreen */
+        .zoom-controls {
+            position: absolute;
+            right: 20px;
+            top: 90px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            opacity: 0.7;
+        }
+        
+        .zoom-controls:hover {
+            opacity: 1;
+        }
+        
+        body:fullscreen .zoom-controls,
+        body:-webkit-full-screen .zoom-controls,
+        body:-moz-full-screen .zoom-controls,
+        body:-ms-fullscreen .zoom-controls {
+            top: 20px;
+            opacity: 0.3;
+        }
+        
+        body:fullscreen .zoom-controls:hover,
+        body:-webkit-full-screen .zoom-controls:hover,
+        body:-moz-full-screen .zoom-controls:hover,
+        body:-ms-fullscreen .zoom-controls:hover {
+            opacity: 1;
+        }
+        
+        .zoom-btn {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: #f4e4bc;
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .zoom-btn:hover {
+            background: rgba(212, 175, 55, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .zoom-level {
+            color: #f4e4bc;
+            font-size: 12px;
+            text-align: center;
+            margin: 4px 0;
+            min-width: 40px;
+        }
+        
+        /* Help text - hide in fullscreen */
+        .help-text {
+            transition: all 0.3s ease;
+            opacity: 0.6;
+        }
+        
+        body:fullscreen .help-text,
+        body:-webkit-full-screen .help-text,
+        body:-moz-full-screen .help-text,
+        body:-ms-fullscreen .help-text {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        /* Fullscreen exit hint */
+        .fullscreen-hint {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            color: #f4e4bc;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 12px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: 100;
+        }
+        
+        body:fullscreen .fullscreen-hint,
+        body:-webkit-full-screen .fullscreen-hint,
+        body:-moz-full-screen .fullscreen-hint,
+        body:-ms-fullscreen .fullscreen-hint {
+            transform: translateX(-50%) translateY(0);
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body class="text-amber-100">
+    <!-- Fullscreen Exit Hint -->
+    <div class="fullscreen-hint">
+        Press ESC or F11 to exit fullscreen
+    </div>
+
+    <!-- Main Container -->
+    <div class="relative w-screen h-screen overflow-hidden">
+        
+        <!-- Background Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/60"></div>
+        
+        <!-- Header Bar -->
+        <div class="header-bar absolute top-0 left-0 right-0 z-50 p-4 bg-black/30 backdrop-blur-lg border-b border-amber-800">
+            <div class="flex items-center justify-between max-w-7xl mx-auto">
+                <div>
+                    <h1 class="text-2xl font-bold gold-gradient" style="font-family: 'Playfair Display', serif;">
+                        AMUL: Building India's Most Trusted Brand
+                    </h1>
+                    <p class="text-amber-200 text-sm" style="font-family: 'Crimson Text', serif;">
+                        A leadership, trust-building, and brand heritage analysis
+                    </p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-amber-200 text-sm">
+                        Slide <span id="current-slide">1</span> of 16
+                    </div>
+                    <div class="flex space-x-2">
+                        <button id="fit-slide-btn" class="nav-btn px-3 py-2 rounded-lg text-amber-200">
+                            📐 Fit to Screen
+                        </button>
+                        <button id="fullscreen-btn" class="nav-btn px-3 py-2 rounded-lg text-amber-200">
+                            ⛶ Fullscreen
+                        </button>
+                        <button id="thumbnails-btn" class="nav-btn px-3 py-2 rounded-lg text-amber-200">
+                            🖼️ Thumbnails
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="header-bar absolute top-20 left-0 right-0 z-40 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill" style="width: 6.25%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zoom Controls -->
+        <div class="zoom-controls z-40">
+            <div class="zoom-btn" id="zoom-in">+</div>
+            <div class="zoom-level" id="zoom-level">100%</div>
+            <div class="zoom-btn" id="zoom-out">−</div>
+            <div class="zoom-btn" id="reset-zoom">⟳</div>
+        </div>
+
+        <!-- Slide Container -->
+        <div class="slide-container">
+            <div class="slide-wrapper" id="slide-wrapper">
+                <iframe 
+                    id="slide-frame" 
+                    src="slide1.html" 
+                    class="slide-iframe"
+                    width="1280" 
+                    height="720"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="navigation-bar absolute bottom-0 left-0 right-0 z-50 p-4 bg-black/30 backdrop-blur-lg border-t border-amber-800">
+            <div class="flex items-center justify-between max-w-7xl mx-auto">
+                <!-- Previous Button -->
+                <button id="prev-btn" class="nav-btn px-6 py-3 rounded-lg text-amber-200 flex items-center space-x-2">
+                    <span>←</span>
+                    <span>Previous</span>
+                </button>
+
+                <!-- Slide Indicators -->
+                <div class="flex items-center space-x-2">
+                    <div class="flex space-x-1">
+                        <?php for($i=1; $i<=16; $i++): ?>
+                            <div class="w-2 h-2 rounded-full bg-amber-600 opacity-50 slide-dot" data-slide="<?php echo $i; ?>"></div>
+                        <?php endfor; ?>
+                    </div>
+                </div>
+
+                <!-- Next Button -->
+                <button id="next-btn" class="nav-btn px-6 py-3 rounded-lg text-amber-200 flex items-center space-x-2">
+                    <span>Next</span>
+                    <span>→</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Thumbnails Overlay -->
+        <div id="thumbnails-overlay" class="fixed inset-0 bg-black/90 z-50 hidden backdrop-blur-lg">
+            <div class="p-8 h-full flex flex-col">
+                <!-- Header -->
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-3xl font-bold gold-gradient" style="font-family: 'Playfair Display', serif;">
+                        Presentation Slides
+                    </h2>
+                    <button id="close-thumbnails" class="nav-btn px-4 py-2 rounded-lg text-amber-200 text-xl">
+                        ✕ Close
+                    </button>
+                </div>
+                
+                <!-- Thumbnails Grid -->
+                <div class="grid grid-cols-4 gap-6 flex-1 overflow-y-auto">
+                    <?php 
+                    $slideTitles = [
+                        "Title Slide",
+                        "Why AMUL? - Hook",
+                        "The Origin Story", 
+                        "Leadership of Dr. Verghese Kurien",
+                        "How AMUL Built Trust",
+                        "AMUL Cooperative Structure",
+                        "Brand Identity Evolution",
+                        "Famous AMUL Topicals",
+                        "Sustaining Trust Today",
+                        "Data Snapshot",
+                        "Symbol of Trust",
+                        "Leadership Lessons",
+                        "Trust in Modern Era", 
+                        "India's Emotional Brand",
+                        "Closing Statement",
+                        "Thank You"
+                    ];
+                    
+                    for($i=1; $i<=16; $i++): ?>
+                        <div class="slide-thumbnail rounded-lg overflow-hidden bg-amber-900/20" data-slide="<?php echo $i; ?>">
+                            <div class="aspect-video bg-amber-800/30 flex items-center justify-center">
+                                <span class="text-4xl text-amber-200 opacity-60"><?php echo $i; ?></span>
+                            </div>
+                            <div class="p-3">
+                                <h3 class="text-amber-200 font-semibold text-sm mb-1">Slide <?php echo $i; ?></h3>
+                                <p class="text-amber-300 text-xs"><?php echo $slideTitles[$i-1]; ?></p>
+                            </div>
+                        </div>
+                    <?php endfor; ?>
+                </div>
+            </div>
+        </div>
+
+        <!-- Keyboard Shortcuts Help -->
+        <div class="help-text absolute bottom-20 right-20 z-40">
+            <div class="bg-black/50 backdrop-blur-lg rounded-lg p-3 text-xs text-amber-200 opacity-60 hover:opacity-100 transition-opacity">
+                <div>🛠️ Controls: ← → arrows, Spacebar, +/- Zoom, F11</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class SlideShow {
+            constructor() {
+                this.currentSlide = 1;
+                this.totalSlides = 16;
+                this.slideFrame = document.getElementById('slide-frame');
+                this.slideWrapper = document.getElementById('slide-wrapper');
+                this.currentSlideElement = document.getElementById('current-slide');
+                this.progressFill = document.getElementById('progress-fill');
+                this.thumbnailsOverlay = document.getElementById('thumbnails-overlay');
+                this.zoomLevel = 1.0;
+                this.zoomStep = 0.1;
+                this.minZoom = 0.5;
+                this.maxZoom = 2.0;
+                
+                this.init();
+            }
+            
+            init() {
+                this.bindEvents();
+                this.updateProgress();
+                this.updateActiveDot();
+                this.fitToScreen(); // Auto-fit on start
+                
+                // Check initial fullscreen state
+                this.updateFullscreenState();
+            }
+            
+            bindEvents() {
+                // Navigation buttons
+                document.getElementById('prev-btn').addEventListener('click', () => this.previousSlide());
+                document.getElementById('next-btn').addEventListener('click', () => this.nextSlide());
+                
+                // Thumbnails
+                document.getElementById('thumbnails-btn').addEventListener('click', () => this.showThumbnails());
+                document.getElementById('close-thumbnails').addEventListener('click', () => this.hideThumbnails());
+                
+                // Fullscreen
+                document.getElementById('fullscreen-btn').addEventListener('click', () => this.toggleFullscreen());
+                
+                // Fit to screen
+                document.getElementById('fit-slide-btn').addEventListener('click', () => this.fitToScreen());
+                
+                // Zoom controls
+                document.getElementById('zoom-in').addEventListener('click', () => this.zoomIn());
+                document.getElementById('zoom-out').addEventListener('click', () => this.zoomOut());
+                document.getElementById('reset-zoom').addEventListener('click', () => this.resetZoom());
+                
+                // Slide dots
+                document.querySelectorAll('.slide-dot').forEach(dot => {
+                    dot.addEventListener('click', () => {
+                        this.goToSlide(parseInt(dot.dataset.slide));
+                    });
+                });
+                
+                // Thumbnail clicks
+                document.querySelectorAll('.slide-thumbnail').forEach(thumb => {
+                    thumb.addEventListener('click', () => {
+                        this.goToSlide(parseInt(thumb.dataset.slide));
+                        this.hideThumbnails();
+                    });
+                });
+                
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => this.handleKeyboard(e));
+                
+                // Window resize
+                window.addEventListener('resize', () => this.handleResize());
+                
+                // Fullscreen change
+                document.addEventListener('fullscreenchange', () => this.updateFullscreenState());
+                document.addEventListener('webkitfullscreenchange', () => this.updateFullscreenState());
+                document.addEventListener('mozfullscreenchange', () => this.updateFullscreenState());
+                document.addEventListener('MSFullscreenChange', () => this.updateFullscreenState());
+            }
+            
+            updateFullscreenState() {
+                const fullscreenBtn = document.getElementById('fullscreen-btn');
+                const isFullscreen = !!document.fullscreenElement || 
+                                   !!document.webkitFullscreenElement || 
+                                   !!document.mozFullScreenElement || 
+                                   !!document.msFullscreenElement;
+                
+                if (isFullscreen) {
+                    fullscreenBtn.innerHTML = '⛶ Exit Fullscreen';
+                    // Re-fit to screen in fullscreen
+                    setTimeout(() => this.fitToScreen(), 100);
+                } else {
+                    fullscreenBtn.innerHTML = '⛶ Fullscreen';
+                    // Re-fit to screen when exiting fullscreen
+                    setTimeout(() => this.fitToScreen(), 100);
+                }
+            }
+            
+            goToSlide(slideNumber) {
+                if (slideNumber >= 1 && slideNumber <= this.totalSlides) {
+                    this.currentSlide = slideNumber;
+                    this.slideFrame.src = `slide${slideNumber}.html`;
+                    this.updateProgress();
+                    this.updateActiveDot();
+                    this.updateThumbnails();
+                    
+                    // Reset zoom when changing slides for consistent experience
+                    setTimeout(() => this.fitToScreen(), 100);
+                }
+            }
+            
+            nextSlide() {
+                if (this.currentSlide < this.totalSlides) {
+                    this.goToSlide(this.currentSlide + 1);
+                }
+            }
+            
+            previousSlide() {
+                if (this.currentSlide > 1) {
+                    this.goToSlide(this.currentSlide - 1);
+                }
+            }
+            
+            updateProgress() {
+                this.currentSlideElement.textContent = this.currentSlide;
+                const progress = (this.currentSlide / this.totalSlides) * 100;
+                this.progressFill.style.width = `${progress}%`;
+            }
+            
+            updateActiveDot() {
+                document.querySelectorAll('.slide-dot').forEach((dot, index) => {
+                    if (index + 1 === this.currentSlide) {
+                        dot.classList.remove('opacity-50');
+                        dot.classList.add('opacity-100', 'bg-amber-400');
+                    } else {
+                        dot.classList.add('opacity-50');
+                        dot.classList.remove('opacity-100', 'bg-amber-400');
+                        dot.classList.add('bg-amber-600');
+                    }
+                });
+            }
+            
+            updateThumbnails() {
+                document.querySelectorAll('.slide-thumbnail').forEach(thumb => {
+                    thumb.classList.remove('active');
+                    if (parseInt(thumb.dataset.slide) === this.currentSlide) {
+                        thumb.classList.add('active');
+                    }
+                });
+            }
+            
+            showThumbnails() {
+                this.updateThumbnails();
+                this.thumbnailsOverlay.classList.remove('hidden');
+            }
+            
+            hideThumbnails() {
+                this.thumbnailsOverlay.classList.add('hidden');
+            }
+            
+            // Zoom functionality
+            zoomIn() {
+                if (this.zoomLevel < this.maxZoom) {
+                    this.zoomLevel += this.zoomStep;
+                    this.applyZoom();
+                }
+            }
+            
+            zoomOut() {
+                if (this.zoomLevel > this.minZoom) {
+                    this.zoomLevel -= this.zoomStep;
+                    this.applyZoom();
+                }
+            }
+            
+            resetZoom() {
+                this.zoomLevel = 1.0;
+                this.applyZoom();
+            }
+            
+            applyZoom() {
+                this.slideWrapper.style.transform = `scale(${this.zoomLevel})`;
+                document.getElementById('zoom-level').textContent = `${Math.round(this.zoomLevel * 100)}%`;
+            }
+            
+            fitToScreen() {
+                const container = document.querySelector('.slide-container');
+                const containerWidth = container.clientWidth - 40; // padding
+                const containerHeight = container.clientHeight - 40;
+                
+                const slideWidth = 1280;
+                const slideHeight = 720;
+                
+                // Calculate scale to fit both width and height
+                const scaleX = containerWidth / slideWidth;
+                const scaleY = containerHeight / slideHeight;
+                const scale = Math.min(scaleX, scaleY) * 0.95; // 95% to add some margin
+                
+                this.zoomLevel = scale;
+                this.applyZoom();
+            }
+            
+            handleResize() {
+                // Auto-fit when window is resized
+                this.fitToScreen();
+            }
+            
+            toggleFullscreen() {
+                if (!document.fullscreenElement && 
+                    !document.webkitFullscreenElement && 
+                    !document.mozFullScreenElement && 
+                    !document.msFullscreenElement) {
+                    // Enter fullscreen
+                    const element = document.documentElement;
+                    if (element.requestFullscreen) {
+                        element.requestFullscreen();
+                    } else if (element.webkitRequestFullscreen) {
+                        element.webkitRequestFullscreen();
+                    } else if (element.mozRequestFullScreen) {
+                        element.mozRequestFullScreen();
+                    } else if (element.msRequestFullscreen) {
+                        element.msRequestFullscreen();
+                    }
+                } else {
+                    // Exit fullscreen
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    }
+                }
+            }
+            
+            handleKeyboard(event) {
+                switch(event.key) {
+                    case 'ArrowRight':
+                    case ' ':
+                    case 'PageDown':
+                        event.preventDefault();
+                        this.nextSlide();
+                        break;
+                    case 'ArrowLeft':
+                    case 'PageUp':
+                        event.preventDefault();
+                        this.previousSlide();
+                        break;
+                    case 'Home':
+                        event.preventDefault();
+                        this.goToSlide(1);
+                        break;
+                    case 'End':
+                        event.preventDefault();
+                        this.goToSlide(this.totalSlides);
+                        break;
+                    case '+':
+                    case '=':
+                        event.preventDefault();
+                        this.zoomIn();
+                        break;
+                    case '-':
+                    case '_':
+                        event.preventDefault();
+                        this.zoomOut();
+                        break;
+                    case '0':
+                        event.preventDefault();
+                        this.resetZoom();
+                        break;
+                    case 'f':
+                    case 'F11':
+                        if (event.ctrlKey || event.metaKey) return;
+                        event.preventDefault();
+                        this.toggleFullscreen();
+                        break;
+                    case 'Escape':
+                        // Only hide thumbnails if not in fullscreen
+                        if (!document.fullscreenElement && 
+                            !document.webkitFullscreenElement && 
+                            !document.mozFullScreenElement && 
+                            !document.msFullscreenElement) {
+                            this.hideThumbnails();
+                        }
+                        break;
+                    case 't':
+                        event.preventDefault();
+                        this.showThumbnails();
+                        break;
+                }
+            }
+        }
+        
+        // Initialize slideshow when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new SlideShow();
+        });
+    </script>
+</body>
+</html>

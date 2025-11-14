@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Trust in Modern Era</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <style>
+    .era-card {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+    .era-card:hover {
+      transform: translateY(-5px);
+      background: rgba(212, 175, 55, 0.15);
+      border-color: rgba(212, 175, 55, 0.5);
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #d4af37, #f4e4bc, #d4af37);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .connector-line {
+      background: linear-gradient(90deg, transparent, #d4af37, transparent);
+      height: 2px;
+    }
+    .empowerment-highlight {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(244, 228, 188, 0.1));
+      border: 2px solid rgba(212, 175, 55, 0.4);
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;background:#3d2914;">
+  <div class="relative w-[1280px] h-[720px] overflow-hidden">
+    
+    <!-- Background Video - Modern India Transition -->
+    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover opacity-25">
+      <source src="https://www.shutterstock.com/shutterstock/videos/3817292635/preview/stock-footage-aerial-shot-of-modern-city-commercial-buildings-with-dramatic-skyline-at-sunrise-in-shenzhen-china.webm" type="video/mp4">
+    </video>
+    
+    <!-- Background Overlays -->
+    <div class="absolute inset-0 bg-gradient-to-br from-black/50 via-transparent to-black/70"></div>
+    <div class="absolute inset-0 bg-radial-gradient(ellipse at center,transparent 20%,rgba(61,41,20,0.9) 100%)"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10 w-full h-full p-8 flex flex-col">
+      <!-- Header -->
+      <div class="text-center mb-8">
+        <h1 class="text-5xl font-bold mb-2 gold-gradient" style="font-family:'Playfair Display',serif;">
+          Why AMUL's Trust Still Lasts
+        </h1>
+        <div class="w-32 h-1 mx-auto bg-gradient-to-r from-transparent via-yellow-600 to-transparent mb-3"></div>
+        <p class="text-xl text-amber-100 opacity-90" style="font-family:'Crimson Text',serif;">
+          2025 & Beyond - Adapting while preserving core values
+        </p>
+      </div>
+
+      <!-- Main Content - Split Screen -->
+      <div class="flex-1 flex space-x-8">
+        <!-- Left Side - 1946 Roots -->
+        <div class="flex-1 era-card p-6 flex flex-col">
+          <div class="text-center mb-6">
+            <div class="text-4xl text-amber-400 mb-2">🕰️</div>
+            <h2 class="text-2xl font-bold text-amber-200" style="font-family:'Playfair Display',serif;">
+              1946 Roots
+            </h2>
+            <p class="text-amber-100 text-sm" style="font-family:'Crimson Text',serif;">Founding Principles</p>
+          </div>
+          
+          <div class="space-y-4 flex-1">
+            <div class="flex items-start space-x-3 p-3 rounded-lg" style="background:rgba(212,175,55,0.05);">
+              <div class="w-2 h-2 rounded-full bg-amber-400 mt-2 flex-shrink-0"></div>
+              <div>
+                <h3 class="text-amber-200 font-semibold mb-1" style="font-family:'Playfair Display',serif;">Rooted in Values</h3>
+                <p class="text-amber-100 text-sm leading-relaxed" style="font-family:'Crimson Text',serif;">
+                  Farmer welfare as the core mission, never compromised
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3 p-3 rounded-lg" style="background:rgba(212,175,55,0.05);">
+              <div class="w-2 h-2 rounded-full bg-amber-400 mt-2 flex-shrink-0"></div>
+              <div>
+                <h3 class="text-amber-200 font-semibold mb-1" style="font-family:'Playfair Display',serif;">Farmer Empowerment</h3>
+                <p class="text-amber-100 text-sm leading-relaxed" style="font-family:'Crimson Text',serif;">
+                  Cooperative model giving ownership to producers
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3 p-3 rounded-lg" style="background:rgba(212,175,55,0.05);">
+              <div class="w-2 h-2 rounded-full bg-amber-400 mt-2 flex-shrink-0"></div>
+              <div>
+                <h3 class="text-amber-200 font-semibold mb-1" style="font-family:'Playfair Display',serif;">Community First</h3>
+                <p class="text-amber-100 text-sm leading-relaxed" style="font-family:'Crimson Text',serif;">
+                  Collective growth over individual profit
+                </p>
+              </div>
+            </div>
+
+            <!-- Vintage Image -->
+            <div class="mt-4 p-3 rounded-lg text-center" style="background:rgba(61,41,20,0.5);">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMm9AzdQ0DgJKlEByQ5ndWpshXt_T4xMYt9Q&s" 
+                   alt="Vintage India" 
+                   class="w-full h-20 object-cover rounded-lg opacity-80">
+              <p class="text-amber-200 text-xs mt-2" style="font-family:'Crimson Text',serif;">The Beginning</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Connector & Empowerment -->
+        <div class="w-48 flex flex-col items-center justify-center">
+          <!-- Arrow Connector -->
+          <div class="connector-line w-full mb-4"></div>
+          
+          <!-- Empowerment Highlight -->
+          <div class="empowerment-highlight p-6 text-center">
+            <div class="text-3xl text-amber-400 mb-3">⚡</div>
+            <h3 class="text-xl font-bold text-amber-200 mb-2" style="font-family:'Playfair Display',serif;">
+              EMPOWERMENT
+            </h3>
+            <p class="text-amber-100 text-sm leading-relaxed" style="font-family:'Crimson Text',serif;">
+              The unchanging core value since 1946
+            </p>
+          </div>
+
+          <!-- Arrow Connector -->
+          <div class="connector-line w-full mt-4"></div>
+
+          <!-- Year Indicator -->
+          <div class="text-center mt-4">
+            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full" style="background:rgba(212,175,55,0.1);">
+              <div class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+              <span class="text-amber-200 text-sm" style="font-family:'Crimson Text',serif;">77+ Years Strong</span>
+              <div class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side - 2025 Evolution -->
+        <div class="flex-1 era-card p-6 flex flex-col">
+          <div class="text-center mb-6">
+            <div class="text-4xl text-amber-400 mb-2">🚀</div>
+            <h2 class="text-2xl font-bold text-amber-200" style="font-family:'Playfair Display',serif;">
+              2025 Evolution
+            </h2>
+            <p class="text-amber-100 text-sm" style="font-family:'Crimson Text',serif;">Modern Adaptations</p>
+          </div>
+          
+          <div class="space-y-4 flex-1">
+            <div class="flex items-start space-x-3 p-3 rounded-lg" style="background:rgba(212,175,55,0.05);">
+              <div class="w-2 h-2 rounded-full bg-amber-400 mt-2 flex-shrink-0"></div>
+              <div>
+                <h3 class="text-amber-200 font-semibold mb-1" style="font-family:'Playfair Display',serif;">Evolved with Times</h3>
+                <p class="text-amber-100 text-sm leading-relaxed" style="font-family:'Crimson Text',serif;">
+                  Digital transformation while keeping human touch
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3 p-3 rounded-lg" style="background:rgba(212,175,55,0.05);">
+              <div class="w-2 h-2 rounded-full bg-amber-400 mt-2 flex-shrink-0"></div>
+              <div>
+                <h3 class="text-amber-200 font-semibold mb-1" style="font-family:'Playfair Display',serif;">Clear Storytelling</h3>
+                <p class="text-amber-100 text-sm leading-relaxed" style="font-family:'Crimson Text',serif;">
+                  Consistent brand narrative across generations
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3 p-3 rounded-lg" style="background:rgba(212,175,55,0.05);">
+              <div class="w-2 h-2 rounded-full bg-amber-400 mt-2 flex-shrink-0"></div>
+              <div>
+                <h3 class="text-amber-200 font-semibold mb-1" style="font-family:'Playfair Display',serif;">Tech-Driven Supply</h3>
+                <p class="text-amber-100 text-sm leading-relaxed" style="font-family:'Crimson Text',serif;">
+                  AI, IoT, and blockchain in supply chain
+                </p>
+              </div>
+            </div>
+
+            <!-- Modern Image -->
+            <div class="mt-4 p-3 rounded-lg text-center" style="background:rgba(61,41,20,0.5);">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxeEL6rcrqUP6JrkQLFhbu-mIFPOpWoao0oA&s" 
+                   alt="Modern India" 
+                   class="w-full h-20 object-cover rounded-lg opacity-80">
+              <p class="text-amber-200 text-xs mt-2" style="font-family:'Crimson Text',serif;">The Future</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Quote -->
+      <div class="mt-6 text-center">
+        <div class="era-card p-4 inline-block">
+          <p class="text-lg text-amber-200 italic" style="font-family:'Crimson Text',serif;">
+            "Most importantly: it still stands for the same thing since 1946"
+          </p>
+          <div class="text-2xl font-bold text-amber-400 mt-2" style="font-family:'Playfair Display',serif;">
+            → EMPOWERMENT ←
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div class="absolute top-4 left-4 w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+    <div class="absolute top-4 right-4 w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+    <div class="absolute bottom-4 left-4 w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+    <div class="absolute bottom-4 right-4 w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></div>
+  </div>
+
+  <script>
+    gsap.registerPlugin(SplitText);
+    
+    // Background video animation
+    const video = document.querySelector('video');
+    gsap.fromTo(video, {
+      opacity: 0,
+      scale: 1.1
+    }, {
+      opacity: 0.25,
+      scale: 1,
+      duration: 2,
+      ease: "power3.out"
+    });
+
+    // Title animation
+    const title = document.querySelector('h1');
+    const titleSplit = SplitText.create(title, {
+      type: "chars"
+    });
+    
+    gsap.fromTo(titleSplit.chars, {
+      opacity: 0,
+      yPercent: 50,
+      rotation: 10
+    }, {
+      opacity: 1,
+      yPercent: 0,
+      rotation: 0,
+      duration: 0.8,
+      stagger: 0.02,
+      delay: 0.5,
+      ease: "back.out(1.7)",
+      onComplete: () => titleSplit.revert()
+    });
+
+    // Left era card animation
+    const leftCard = document.querySelector('.flex-1:first-child');
+    gsap.fromTo(leftCard, {
+      opacity: 0,
+      x: -100,
+      scale: 0.9
+    }, {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      duration: 1,
+      delay: 1.2,
+      ease: "back.out(1.7)"
+    });
+
+    // Right era card animation
+    const rightCard = document.querySelector('.flex-1:last-child');
+    gsap.fromTo(rightCard, {
+      opacity: 0,
+      x: 100,
+      scale: 0.9
+    }, {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      duration: 1,
+      delay: 1.4,
+      ease: "back.out(1.7)"
+    });
+
+    // Center empowerment animation
+    const empowerment = document.querySelector('.empowerment-highlight');
+    gsap.fromTo(empowerment, {
+      opacity: 0,
+      scale: 0.5,
+      rotation: -10
+    }, {
+      opacity: 1,
+      scale: 1,
+      rotation: 0,
+      duration: 1.2,
+      delay: 1.8,
+      ease: "elastic.out(1,0.5)"
+    });
+
+    // Connector lines animation
+    const connectors = document.querySelectorAll('.connector-line');
+    connectors.forEach((connector, index) => {
+      gsap.fromTo(connector, {
+        scaleX: 0
+      }, {
+        scaleX: 1,
+        duration: 1,
+        delay: 2 + (index * 0.3),
+        ease: "power3.out"
+      });
+    });
+
+    // Content items animation - left side
+    const leftItems = document.querySelectorAll('.flex-1:first-child .flex.items-start');
+    gsap.fromTo(leftItems, {
+      opacity: 0,
+      x: -30
+    }, {
+      opacity: 1,
+      x: 0,
+      duration: 0.6,
+      stagger: 0.15,
+      delay: 1.6,
+      ease: "power2.out"
+    });
+
+    // Content items animation - right side
+    const rightItems = document.querySelectorAll('.flex-1:last-child .flex.items-start');
+    gsap.fromTo(rightItems, {
+      opacity: 0,
+      x: 30
+    }, {
+      opacity: 1,
+      x: 0,
+      duration: 0.6,
+      stagger: 0.15,
+      delay: 1.8,
+      ease: "power2.out"
+    });
+
+    // Images animation
+    const images = document.querySelectorAll('img');
+    gsap.fromTo(images, {
+      opacity: 0,
+      scale: 0.8
+    }, {
+      opacity: 0.8,
+      scale: 1,
+      duration: 1,
+      stagger: 0.2,
+      delay: 2.2,
+      ease: "back.out(1.7)"
+    });
+
+    // Bottom quote animation
+    const bottomQuote = document.querySelector('.mt-6 > div');
+    gsap.fromTo(bottomQuote, {
+      opacity: 0,
+      y: 30
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      delay: 2.8,
+      ease: "power3.out"
+    });
+
+    // Decorative dots animation
+    const dots = document.querySelectorAll('.absolute.rounded-full');
+    gsap.fromTo(dots, {
+      scale: 0,
+      rotation: 180
+    }, {
+      scale: 1,
+      rotation: 0,
+      duration: 1,
+      delay: 3.2,
+      ease: "elastic.out(1,0.5)"
+    });
+
+    // Hover effects
+    document.querySelectorAll('.era-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        gsap.to(this, {
+          y: -3,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        gsap.to(this, {
+          y: 0,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+    });
+
+    // Continuous subtle pulse for empowerment
+    gsap.to('.empowerment-highlight', {
+      scale: 1.05,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
+  </script>
+</body>
+</html>

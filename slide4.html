@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>The Leadership of Dr. Verghese Kurien</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'Crimson Text', serif;
+      background: #3d2914;
+    }
+
+    .container {
+      width: 1280px;
+      height: fit-content;
+      min-height: 720px;
+      overflow: hidden;
+      padding: 48px;
+      background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.1) 0%, rgba(61, 41, 20, 0.9) 70%, #2a1b0f 100%);
+    }
+
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: #d4af37;
+      margin-bottom: 24px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 400;
+      color: #f4e4bc;
+      margin-bottom: 32px;
+      font-style: italic;
+    }
+
+    .content-text {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #f4e4bc;
+      margin-bottom: 20px;
+    }
+
+    .transformation-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      padding: 12px;
+      background: rgba(212, 175, 55, 0.1);
+      border-left: 4px solid #d4af37;
+      border-radius: 4px;
+    }
+
+    .transformation-icon {
+      color: #d4af37;
+      margin-right: 12px;
+      font-size: 20px;
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .principle-card {
+      background: rgba(244, 228, 188, 0.1);
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .principle-title {
+      font-weight: 600;
+      color: #d4af37;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .principle-desc {
+      font-size: 14px;
+      color: #f4e4bc;
+      opacity: 0.9;
+    }
+
+    .portrait-container {
+      position: relative;
+      width: 320px;
+      height: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      border: 3px solid #d4af37;
+    }
+
+    .portrait {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .vignette {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, transparent 30%, rgba(61, 41, 20, 0.3) 100%);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container flex items-center justify-between">
+    <div class="flex-1 pr-12">
+      <h1 class="title">The Leadership of Dr. Verghese Kurien</h1>
+      <p class="subtitle">Father of the White Revolution</p>
+      <p class="content-text">He brought engineering + ethics + empathy into dairy.</p>
+      <div class="transformations mb-8">
+        <h3 style="color:#d4af37;font-size:20px;margin-bottom:16px;font-weight:600;">He transformed:</h3>
+        <div class="transformation-item">
+          <span class="transformation-icon">✔</span>
+          <span>Scattered farmers → Strong network</span>
+        </div>
+        <div class="transformation-item">
+          <span class="transformation-icon">✔</span>
+          <span>Exploitation → Fair payment</span>
+        </div>
+        <div class="transformation-item">
+          <span class="transformation-icon">✔</span>
+          <span>Limited production → India as world's largest milk producer</span>
+        </div>
+      </div>
+      <h3 style="color:#d4af37;font-size:20px;margin-bottom:16px;font-weight:600;">Leadership Principles:</h3>
+      <div class="principles-grid">
+        <div class="principle-card">
+          <div class="principle-title">Servant Leadership</div>
+          <div class="principle-desc">Leading by serving others first</div>
+        </div>
+        <div class="principle-card">
+          <div class="principle-title">Long-term Thinking</div>
+          <div class="principle-desc">Building sustainable systems</div>
+        </div>
+        <div class="principle-card">
+          <div class="principle-title">Transparent Systems</div>
+          <div class="principle-desc">Open and accountable processes</div>
+        </div>
+        <div class="principle-card">
+          <div class="principle-title">Innovation with Purpose</div>
+          <div class="principle-desc">Technology serving humanity</div>
+        </div>
+      </div>
+    </div>
+    <div class="portrait-container">
+      <img src="https://voxdeck-sg-s3.voxdeck.ai/aps/prod/CmwRTjnvRU-S_5XBPukCow_268x188.png" alt="Dr. Verghese Kurien" class="portrait">
+      <div class="vignette"></div>
+    </div>
+  </div>
+  <script>
+    gsap.registerPlugin(SplitText);
+    const title = document.querySelector('.title');
+    const titleSplit = SplitText.create(title, {
+      type: "chars"
+    });
+    gsap.fromTo(titleSplit.chars, {
+      opacity: 0,
+      yPercent: 50,
+      rotation: 90
+    }, {
+      opacity: 1,
+      yPercent: 0,
+      rotation: 0,
+      duration: 0.8,
+      stagger: 0.02,
+      ease: "elastic",
+      onComplete: () => {
+        titleSplit.revert();
+      }
+    });
+    const subtitle = document.querySelector('.subtitle');
+    gsap.fromTo(subtitle, {
+      opacity: 0,
+      x: -50
+    }, {
+      opacity: 1,
+      x: 0,
+      duration: 1,
+      delay: 0.5,
+      ease: "power2.out"
+    });
+    const transformationItems = document.querySelectorAll('.transformation-item');
+    gsap.fromTo(transformationItems, {
+      opacity: 0,
+      x: -30
+    }, {
+      opacity: 1,
+      x: 0,
+      duration: 0.6,
+      stagger: 0.2,
+      delay: 1,
+      ease: "power2.out"
+    });
+    const principleCards = document.querySelectorAll('.principle-card');
+    gsap.fromTo(principleCards, {
+      opacity: 0,
+      y: 30
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      stagger: 0.1,
+      delay: 1.5,
+      ease: "power2.out"
+    });
+    const portrait = document.querySelector('.portrait-container');
+    gsap.fromTo(portrait, {
+      opacity: 0,
+      scale: 0.8
+    }, {
+      opacity: 1,
+      scale: 1,
+      duration: 1,
+      delay: 0.8,
+      ease: "power2.out"
+    });
+    const contentText = document.querySelector('.content-text');
+    gsap.fromTo(contentText, {
+      opacity: 0,
+      y: 20
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      delay: 0.7,
+      ease: "power2.out"
+    });
+  </script>
+
+</body>
+</html>
